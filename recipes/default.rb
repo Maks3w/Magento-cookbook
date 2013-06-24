@@ -55,5 +55,5 @@ execute "mage install" do
            \ --admin_username '#{node['magento']['admin_user']['username']}' \
            \ --admin_password '#{node['magento']['admin_user']['password']}'"
   action :run
-  creates "#{node['vhost_root']}/app/etc/local.xml"
+  creates "#{node['magento']['web_path']}/app/etc/local.xml"
 end
