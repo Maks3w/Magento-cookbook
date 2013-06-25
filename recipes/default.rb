@@ -5,7 +5,7 @@ include_recipe "php"
 include_recipe "apache2::mod_php5"
 include_recipe "database::mysql"
 
-%w{ php5-curl }.each do |a_package|
+%w{ php5-curl php5-gd php5-mcrypt php5-mysql }.each do |a_package|
   package a_package
 end
 
