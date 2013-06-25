@@ -57,3 +57,13 @@ execute "mage install" do
   action :run
   creates "#{node['magento']['web_path']}/app/etc/local.xml"
 end
+
+execute "mage reindexall" do
+  user node['apache']['user']
+  group node['apache']['group']
+  cwd node['magento']['web_path']
+  command "php shell/indexer.php reindexall"
+  action :run
+end
+
+
